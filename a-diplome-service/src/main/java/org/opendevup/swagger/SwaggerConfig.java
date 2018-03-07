@@ -20,7 +20,7 @@ public class SwaggerConfig {
 	
 	@Bean
 	public Docket proxyApi() {
-		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.any()).
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("org.opendevup.swagger")).
 				paths(PathSelectors.any()).build();
 				}
 		
