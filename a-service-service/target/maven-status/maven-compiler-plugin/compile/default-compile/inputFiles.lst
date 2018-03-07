@@ -1,6 +1,6 @@
-/root/eclipse-workspace/a-service-service/src/main/java/com/example/demo/restcontroller/ServiceRestController.java
-/root/eclipse-workspace/a-service-service/src/main/java/com/example/demo/repository/ServiceRepository.java
-/root/eclipse-workspace/a-service-service/src/main/java/com/example/demo/ServiceServiceApplication.java
-/root/eclipse-workspace/a-service-service/src/main/java/com/example/demo/entity/Service.java
-/root/eclipse-workspace/a-service-service/src/main/java/com/example/demo/repository/ServiceConfigJson.java
-/root/eclipse-workspace/a-service-service/src/main/java/com/example/demo/swagger/SwaggerConfig.java
+/home/simo/Videos/UsineLogi/a-service-service/src/main/java/com/example/demo/repository/ServiceRepository.java
+/home/simo/Videos/UsineLogi/a-service-service/src/main/java/com/example/demo/ServiceServiceApplication.java
+/home/simo/Videos/UsineLogi/a-service-service/src/main/java/com/example/demo/swagger/SwaggerConfig.java
+/home/simo/Videos/UsineLogi/a-service-service/src/main/java/com/example/demo/repository/ServiceConfigJson.java
+/home/simo/Videos/UsineLogi/a-service-service/src/main/java/com/example/demo/restcontroller/ServiceRestController.java
+/home/simo/Videos/UsineLogi/a-service-service/src/main/java/com/example/demo/entity/Service.java

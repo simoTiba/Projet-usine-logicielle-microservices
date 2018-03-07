@@ -76,18 +76,14 @@ public class ProxyGatewayRestService {
 	}
 
 	@GetMapping("/diplome-service/diplomeByidEnseignant/{idEnseignant}")
-	public void diplomeByidEnseignant(@PathVariable Long idEnseignant) {
-		
-	}
+	public void diplomeByidEnseignant(@PathVariable Long idEnseignant) { }
 	
 	@GetMapping("/services-service/serviceByEnseignant/{idEnseignant}")
-	public void serviceByEnseignant(@PathVariable Long idEnseignant) {
-		
-	}
+	public void serviceByEnseignant(@PathVariable Long idEnseignant) { }
+
 	@GetMapping("/services-service/serviceByDiplome/{idDiplome}")
-	public void serviceByDiplome(@PathVariable String idDiplome) {
-		
-	}
+	public void serviceByDiplome(@PathVariable String idDiplome) { }
+	
 	//DRIBLE
 	@GetMapping("diplomesProxy/{idDiplome}")
 	Collection<Diplome> getDiplomeByUeId(@PathVariable String idDiplome) { 
@@ -100,7 +96,7 @@ public class ProxyGatewayRestService {
 	   return this.integrationClient.getService(ueId);
 	}
 	
-	/**************** AJOUTER DIPLOME & SERVICE****************************/
+	/**************** AJOUTER DIPLOME & SERVICE & ENSEIGNANT****************************/
 	@PostMapping("/addDiplomeProxy")
 	public void addDiplome(@RequestBody Diplome dip) {
 		HttpEntity<Diplome> responseType = (HttpEntity<Diplome>) new HttpEntity<>(dip);
@@ -112,8 +108,14 @@ public class ProxyGatewayRestService {
 		HttpEntity<Service> responseType = (HttpEntity<Service>) new HttpEntity<>(service);
 		restTemplate.exchange("http://services-service/addService", HttpMethod.POST, responseType, Service.class);
 	}
+
+	@PostMapping("/addEnseignantProxy")
+	public void addEnseignant(@RequestBody Enseignant ens) {
+		HttpEntity<Enseignant> responseType = (HttpEntity<Enseignant>) new HttpEntity<>(ens);
+		restTemplate.exchange("http://enseignant-service/addEnseignant", HttpMethod.POST, responseType, Enseignant.class);
+	}
 	
-	/**************** SUPPRIMER DIPLOME****************************/
+	/**************** SUPPRIMER DIPLOME & SERVICE & ENSEIGNANT ****************************/
 	@DeleteMapping("/deleteDiplomesProxy/{idDiplome}")
 	public void deleteDiplome(@PathVariable String idDiplome) {
 		restTemplate.delete("http://diplome-service/deleteDiplomes/{idDiplome}",idDiplome);
@@ -123,8 +125,14 @@ public class ProxyGatewayRestService {
 	public void deleteService(@PathVariable String ueId) {
 		restTemplate.delete("http://services-service/deleteServices/{ueId}",ueId);
 	}
+
+	@DeleteMapping("/deleteEnseignantProxy/{idEnseignant}")
+	public void deleteEnseignant(@PathVariable Long idEnseignant) {
+		restTemplate.delete("http://enseignant-service/deleteEnseignants/{idEnseignant}",idEnseignant);
+	}
 	
-	/**************** PUT DIPLOME****************************/
+	
+	/**************** PUT DIPLOME & SERVICE & ENSEIGNANT****************************/
 	@PutMapping("/diplomesProxy/info")
 	public @ResponseBody String updateDiplome(@RequestBody Diplome diplome){
 	 restTemplate.put("http://diplome-servic/diplomes/info", diplome);
@@ -137,5 +145,23 @@ public class ProxyGatewayRestService {
 	 return "ok";
 	}
 
+	@PutMapping("/enseignantProxy/info")
+	public @ResponseBody String updateEnseignant(@RequestBody Enseignant ens){
+	 restTemplate.put("http://enseignant-servic/enseignants/info", ens);
+	 return "ok";
+	}
+//	/***************MAPPING ENTRE DIPLOME ET SERVICE******************/
+//	@GetMapping("/serviceByDiplome/{ueId}")
+//	 proxy proxy(@PathVariable String ueId) { 
+//	   return new proxy(ueId, this.integrationClient.getService(ueId), this.integrationClient.getdiplomeByService(ueId));
+//		}
+//	
+//
+//	/***************MAPPING ENTRE ENSEINGNAT ET SERVICE******************/
+//	
+//	@GetMapping("/servicesByEnseignant/{idEnseignant}")
+//	proxy proxy1(@PathVariable Long idEnseignant){
+//		return new proxy(idEnseignant, this.integrationClient.getserviceByEnseignant(idEnseignant), this.integrationClient.getEnseignants(idEnseignant));
+//	}
 }
 
