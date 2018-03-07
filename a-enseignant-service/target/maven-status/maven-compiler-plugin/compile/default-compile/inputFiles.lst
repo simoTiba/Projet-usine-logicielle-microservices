@@ -1,0 +1,5 @@
+/root/eclipse-workspace/a-enseignant-service/src/main/java/com/example/demo/EnseignantServiceApplication.java
+/root/eclipse-workspace/a-enseignant-service/src/main/java/com/example/demo/repository/EnseignantConfigJson.java
+/root/eclipse-workspace/a-enseignant-service/src/main/java/com/example/demo/restcontroller/EnseignantRestController.java
+/root/eclipse-workspace/a-enseignant-service/src/main/java/com/example/demo/entity/Enseignant.java
+/root/eclipse-workspace/a-enseignant-service/src/main/java/com/example/demo/repository/EnseignantRepository.java

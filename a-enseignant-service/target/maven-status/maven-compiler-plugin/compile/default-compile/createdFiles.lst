@@ -1,0 +1,5 @@
+com/example/demo/restcontroller/EnseignantRestController.class
+com/example/demo/repository/EnseignantRepository.class
+com/example/demo/entity/Enseignant.class
+com/example/demo/EnseignantServiceApplication.class
+com/example/demo/repository/EnseignantConfigJson.class

@@ -1,0 +1,6 @@
+com/example/demo/restcontroller/ServiceRestController.class
+com/example/demo/ServiceServiceApplication.class
+com/example/demo/repository/ServiceConfigJson.class
+com/example/demo/swagger/SwaggerConfig.class
+com/example/demo/repository/ServiceRepository.class
+com/example/demo/entity/Service.class
