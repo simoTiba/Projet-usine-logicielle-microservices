@@ -1,6 +1,7 @@
 package org.opendevup.entities;
 
 public class Diplome{
+	
 	private String idDiplome;
 	private String semestre;
 	private String volumehoraire;
