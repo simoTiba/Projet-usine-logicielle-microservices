@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-echo ------------------------------ Compile Confi ----------------------------
+echo ------------------------------ Compile Config ----------------------------
 cd a-config-service/
 mvn clean install
 sleep 3
@@ -29,5 +29,6 @@ echo ------------------------------ Compile Proxy ----------------------------
 cd ../a-proxy-service
 mvn clean install
 sleep 3
+docker rmi -f config-service eureka-service diplome-service services-service enseignant-service proxy-service
 
 cd ..

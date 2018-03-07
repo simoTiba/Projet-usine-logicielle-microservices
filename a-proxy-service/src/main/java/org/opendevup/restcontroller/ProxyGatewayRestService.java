@@ -84,16 +84,19 @@ public class ProxyGatewayRestService {
 	@GetMapping("/services-service/serviceByDiplome/{idDiplome}")
 	public void serviceByDiplome(@PathVariable String idDiplome) { }
 	
-	//DRIBLE
 	@GetMapping("diplomesProxy/{idDiplome}")
 	Collection<Diplome> getDiplomeByUeId(@PathVariable String idDiplome) { 
 	   return this.integrationClient.getDips(idDiplome);
 	}
 	
-	//DRIBLE
 	@GetMapping("servicesProxy/{ueId}")
 	Collection<Service> getServicesByUeId(@PathVariable String ueId) { 
 	   return this.integrationClient.getService(ueId);
+	}
+	
+	@GetMapping("enseignantProxy/{idEnseignant}")
+	Collection<Enseignant> getEnseignantByid(@PathVariable Long idEnseignant) { 
+	   return this.integrationClient.getEnseignants(idEnseignant);
 	}
 	
 	/**************** AJOUTER DIPLOME & SERVICE & ENSEIGNANT****************************/
