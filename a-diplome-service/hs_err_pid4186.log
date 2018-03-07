@@ -1,0 +1,92 @@
+SIGBUS at pc=0x00007fa80ed6c90e, tid=0x00007fa7e74c5700# JRE version: Java(TM) SE Runtime Environment (8.0_144-b01) (build 1.8.0_144-b01)
+V  PerfLongVariant::sample()+0x1e
+#
+
+#
+# If you would like to submit a bug report, please visit:
+http://bugreport.java.com/bugreport/crash.jsp
+#
+
+Current thread (0x00007fa8080cb000):  WatcherThread [stack: 0x00007fa7e73c5000,0x00007fa7e74c6000]
+
+, si_addr: 0x00007fa80ffe9580
+Registers:
+RAX=0x000000eb31510e18, RBX=0x00007fa80ffe9580, RDX=0x0000000000000878
+, RBP=0x00007fa7e74c4b10, RSI=0x00007fa7e74c4ae0, RDI=0x0000000000000001
+, R9 =0x0000000000000001, R11=0x0000000000000001
+, R13=0x00007fa808020d80, R15=0x0000000000000032RIP=0x00007fa80ed6c90e, CSGSFS=0x0000000000000033, ERR=0x0000000000000007  TRAPNO=0x000000000000000e
+0x00007fa7e74c4b00:    
+0x00007fa7e74c4b10:    00007fa80edfd17d0x00007fa7e74c4b20:    
+0x00007fa7e74c4b30:    00000000000000320x00007fa7e74c4b40:    00007fa80ee4884d
+0000000000000000 00000000000000320x00007fa7e74c4b60:   00007fa8080cb000 00007fa8080cc45000007fa8080cb00000007fa7e74c57000x00007fa7e74c4b80:   00007fa7e74c4c0000007fa80ee784270x00007fa7e74c4b90:    00007fa8080cb0000x00007fa7e74c4ba0:    
+0x00007fa7e74c4bb0:    00007fa80ece8726
+00007fa7e74c4c00 000000000000000000007fa8080cc54000007fa8080cc450
+
+00007fa80ed2e338
+0000000000000000 00000000000000000x00007fa7e74c4c20:    
+0000000000000000 0000000000000000000000000000000000000000000000000x00007fa7e74c4c50:    
+0x00007fa7e74c4c60:   0000000000000000 00000000000000000x00007fa7e74c4c70:    00000000000000000x00007fa7e74c4c80:   00000000000000000000000000000000
+000000000000000000000000000000000x00007fa7e74c4ca0:    00000000000000000x00007fa7e74c4cb0:    
+0x00007fa7e74c4cc0:   0000000000000000
+00000000000000000000000000000000
+0x00007fa7e74c4ce0:   0000000000000000 
+0000000000000000 0000000000000000
+909055  89f848 e553   ec 08  
+   85ff 48    8b07ff100x00007fa80ed6c90e:    890348 085b c30f1f84 00000x00007fa80ed6c91e:   0000  48     e5 0e76
+
+
+RAX=0x00007fa80ffe9580 is an unknown value
+RDX=RSP=RSI=RDI=0x0000000000000001 is an unknown value
+R9 =R10=0x0000000000000001 is an unknown value
+R13=R15=0x0000000000000032 is an unknown value
+Stack: ,  sp=0x00007fa7e74c4b00V  PerfLongVariant::sample()+0x1e
+V  [libjvm.so+0xa74427]
+---------------  P R O C E S S  ---------------
+ daemon, id=5108]   daemon_thread_blocked, id=4506]  0x00007fa79c001000_thread_blocked
+ _thread_blocked
+ daemon_thread_blocked]
+  JavaThread "http-nio-8084-Acceptor-0" daemon_thread_in_native
+  daemon_thread_in_native, stack(0x00007fa7a9cc8000,0x00007fa7a9dc9000)   JavaThread "http-nio-8084-exec-10" daemon, id=4330]
+  [, id=4329 , id=43280x00007fa8099c9800  JavaThread "http-nio-8084-exec-5" [
+  _thread_blocked]  JavaThread "http-nio-8084-exec-3"_thread_blocked, id=4323  , stack(0x00007fa7aa6d2000,0x00007fa7aa7d3000)0x00007fa8099c0000]  daemon] daemon [
+JavaThread "DiscoveryClient-1"_thread_blocked, stack(0x00007fa7aaad6000,0x00007fa7aabd7000)
+]
+   daemon, stack(0x00007fa7ab1a0000,0x00007fa7ab2a1000)0x00007fa809937800 [, id=4314]
+0x00007fa809936800JavaThread "Eureka-JerseyClient-Conn-Cleaner2" daemon_thread_blocked, id=4313, stack(0x00007fa7e58dd000,0x00007fa7e59de000)
+    daemon []
+0x00007fa809204000 daemon_thread_blocked]
+    [, id=4228 _thread_blocked]]0x00007fa808088000 [_thread_blocked daemon_thread_blocked
+Other Threads:
+=>WatcherThreadVM state:
+
+ Begin Bits: [0x00007fa7f5280000, 0x00007fa7f7140000)
+ total_blobs=6193 nmethods=5645 adapters=461
+Thread 0x00007fa8080c5800 
+
+
+
+{Heap before GC invocations=16 (full 2):
+ PSYoungGen      total 231936K, used 231146K [0x00000000d7000000, 0x00000000e9c80000, 0x0000000100000000)
+  eden space 213504K, 100% used [0x00000000d7000000,0x00000000e4080000,0x00000000e4080000)
+  from space 18432K, 95% used [0x00000000e4080000,0x00000000e51baa78,0x00000000e5280000)
+  to   space 20480K, 0% used [0x00000000e8880000,0x00000000e8880000,0x00000000e9c80000)
+ ParOldGen       total 96768K, used 20473K [0x0000000085000000, 0x000000008ae80000, 0x00000000d7000000)
+  object space 96768K, 21% used [0x0000000085000000,0x00000000863fe548,0x000000008ae80000)
+ Metaspace       used 57891K, capacity 58540K, committed 58880K, reserved 1099776K
+  class space    used 7407K, capacity 7578K, committed 7680K, reserved 1048576K
+GC heap before
+GC heap after
+
+Thread 0x00007fa8099c0000 
+Thread 0x00007fa8099c0000 
+Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fa7f9daa434 method=sun.reflect.annotation.AnnotationInvocationHandler.equalsImpl(Ljava/lang/Object;)Ljava/lang/Boolean; @ 142Thread 0x00007fa8099c5800 
+Exception <a 'java/net/SocketTimeoutException': Read timed out> (0x00000000dc101f70) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 735]Exception <a 'java/net/SocketTimeoutException': Read timed out> (0x00000000dc10c0c0) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 735]Event: 973.293 flushing nmethod 0x00007fa7f9b873d0
+                  /usr/java/jdk1                           [heap0 00:00 0 
+8cd00000-d7000000 ---00000000 00:00 0 
+100880000-14000 00:00 0 
+7fa790000000-7fa7900298021000 rw-p 00000000 00:00 0 
+00-7fa7a9ecd000 ---p 00000000 00 00000000 00:00 0 
+7fa7aa4d3000-a8d7000-7fa7aa9d5000 rw-p 0000007aa9d8000-7fa7aaad6000 rw-p 000000000000 00:00 0 
+7fa7aaea2000-7-7fa7ab2a1000 rw-p 00000000 00:000000-7fa7bc021000 rw-p 0000000000000 ---p 00000000 00:00 0 
+7faa7e42c2000-7fa7e44c2000 rw-p 0007fa7e4dc3000 rw-p 00000000 00:00-s 002f8000 00:26 216712         00:00 0 
+7fa7e4e64000-7fa7e4f62

@@ -1,0 +1,16 @@
+org/opendevup/AProxyServiceApplication.class
+org/opendevup/entities/Service.class
+org/opendevup/restcontroller/Myconfiguration.class
+org/opendevup/clients/diplomeClient.class
+org/opendevup/entities/Diplome.class
+org/opendevup/clients/IntegrationClient.class
+org/opendevup/restcontroller/ProxyGatewayRestService$3.class
+org/opendevup/entities/Enseignant.class
+org/opendevup/restcontroller/ProxyGatewayRestService$1.class
+org/opendevup/clients/FeignExample.class
+org/opendevup/clients/enseignantClient.class
+org/opendevup/restcontroller/ProxyGatewayRestService$2.class
+org/opendevup/swagger/SwaggerConfig.class
+org/opendevup/restcontroller/ProxyGatewayRestService.class
+org/opendevup/entities/proxy.class
+org/opendevup/clients/serviceClient.class

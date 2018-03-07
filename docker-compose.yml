@@ -1,0 +1,66 @@
+version: '2.1'
+
+services:
+
+    config:
+        build: ./a-config-service
+        image: config-service
+        ports:
+            - 8888:8888
+        hostname: config
+        container_name: config 
+
+    eureka:
+        build: ./a-eureka-service
+        image: eureka-service
+        ports:
+            - 8761:8761
+        depends_on: 
+            - config 
+        hostname: eureka
+        container_name: eureka
+
+    diplome:
+        build: ./a-diplome-service
+        image: diplome-service
+        ports:
+            - 3333:3333
+        depends_on: 
+            - eureka
+        hostname: diplome
+        hostname: localhost        
+        container_name: diplome
+
+    service:
+        build: ./a-service-service
+        image: services-service
+        ports:
+            - 1111:1111
+        depends_on: 
+            - eureka
+        hostname: services
+        hostname: localhost
+        container_name: services
+
+    enseignant:
+        build: ./a-enseignant-service
+        image: enseignant-service
+        ports:
+            - 2222:2222
+        depends_on: 
+            - eureka
+        hostname: enseignant
+        hostname: localhost
+        container_name: enseignant        
+
+    proxy:
+        build: ./a-proxy-service
+        image: proxy-service
+        ports:
+            - 9999:9999
+        depends_on: 
+            - diplome
+            - service
+            - enseignant
+        hostname: localhost
+        container_name: proxy

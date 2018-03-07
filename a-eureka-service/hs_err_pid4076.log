@@ -1,0 +1,118 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+, pid=4076
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_144-b01) (build 1.8.0_144-b01)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.144-b01 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0x96890e]  PerfLongVariant::sample()+0x1e
+#
+
+#
+
+#   http://bugreport.java.com/bugreport/crash.jsp
+---------------  T H R E A D  ---------------
+
+WatcherThread [id=4095]
+
+si_signo: 7 (SIGBUS), si_code: 2 (BUS_ADRERR), si_addr: 0x00007f0a63c72580
+RAX=0x000000f010553816, RCX=0x0000000000000878
+RSP=0x00007f0a3f0c0e00, RSI=0x00007f0a3f0c0de0
+R8 =0x00000000000db0e6, R10=0x0035685e86a64dbd
+R12=0x0000000000000005, R13=0x00007f0a5c020060, R14=0x00007f0a5c00c2e0, R15=0x0000000000000032
+RIP=0x00007f0a629f090e, EFLAGS=0x0000000000010202, CSGSFS=0x0000000000000033, ERR=0x0000000000000007
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f0a3f0c0e00)
+0x00007f0a3f0c0e00:   00007f0a5c00c2e0 0000000000000028
+0x00007f0a3f0c0e10:   00007f0a3f0c0e40 00007f0a62a8117d
+0x00007f0a3f0c0e20:   00007f0a3f0c0e40 0000000000000001
+0x00007f0a3f0c0e30:   0000000000000002 0000000000000032
+0x00007f0a3f0c0e40:   00007f0a3f0c0e80 00007f0a62acc84d
+0x00007f0a3f0c0e50:   0000000000000000 0000000000000032
+00007f0a5c0e4800 00007f0a5c0e57500x00007f0a3f0c0e70:   
+0x00007f0a3f0c0e80:    
+0x00007f0a3f0c0e90:   0000000000000000 
+00007f0a5c0e5840
+0x00007f0a3f0c0eb0:    00007f0a6296c7260x00007f0a3f0c0ec0:    00007f0a5c0e4800
+00007f0a3f0c0f0000000000000000000x00007f0a3f0c0ee0:   00007f0a5c0e584000007f0a5c0e5750
+00007f0a5c0e480000007f0a3f0c17000x00007f0a3f0c0f00:   00007f0a3f0c0f5000007f0a629b23380000000000000000 0x00007f0a3f0c0f20:   00000000000000000000000000000000 
+0x00007f0a3f0c0f40:    
+0000000000000000 
+000000000000000000007f0a3f0c1700
+ 23c05583c160265200007f0a63c4eb0f 00007f0a3f0c1700
+ddd42b9bdfa02652ddd4928b4f7a2652 0x00007f0a3f0c0fc0:    
+0x00007f0a3f0c0fd0:    
+0000000000000000000000000000000000007f0a63168aadInstructions: (pc=0x00007f0a629f090e)
+90  488948e5  4883ec08 48 
+0x00007f0a629f08fe:   7f384885ff740c48     ff 10
+ 89034883  08  c9 c30f1f  00  5531c0   48  e5     
+
+RCX=RDX=0x00007f0a3f0c0e00 is an unknown value
+0x00007f0a3f0c0e10 is an unknown value
+RDI=0x0000000000000001 is an unknown value
+R8 =R9 =0x0035685e86a64dbd is an unknown value
+0x0000000000000001 is an unknown value
+R13=0x00007f0a5c00c2e0 is an unknown value
+R15=0x0000000000000032 is an unknown value
+
+
+Stack: [0x00007f0a3efc1000,0x00007f0a3f0c2000],  sp=0x00007f0a3f0c0e00,  free space=1023k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x96890e]  PerfLongVariant::sample()+0x1e
+
+  [libjvm.so+0x92a338]
+---------------  P R O C E S S  ---------------
+Java Threads: ( => current thread )
+ , id=4082, stack(0x00007f0a63b4f000,0x00007f0a63c50000)    daemon, id=4178
+  daemon [, stack(0x00007f09f4c53000,0x00007f09f4d54000)
+0x00007f0a5d030800 daemon, id=4176, stack(0x00007f09f4d54000,0x00007f09f4e55000)   JavaThread "http-nio-8761-ClientPoller-0" [, stack(0x00007f09f4e55000,0x00007f09f4f56000)  JavaThread "http-nio-8761-exec-10", id=4174]  JavaThread "http-nio-8761-exec-9"_thread_blocked, stack(0x00007f09f5057000,0x00007f09f5158000)
+  0x00007f0a5d028000 daemon [, id=4171, stack(0x00007f09f5158000,0x00007f09f5259000)  daemon_thread_blocked, stack(0x00007f09f5259000,0x00007f09f535a000)]0x00007f0a5d024800  daemon []  daemon, id=4168]   JavaThread "http-nio-8761-exec-4" daemon]  0x00007f0a5d01e800JavaThread "http-nio-8761-exec-3" [  0x00007f0a5d01d000_thread_blocked  0x00007f0a5ceef800 daemon, id=4164    [, stack(0x00007f09f5960000,0x00007f09f5a61000)0x00007f0a5c676800_thread_blocked, id=4160]
+  [_thread_blocked   ]    [, id=4156
+0x00007f0a5ca05000JavaThread "TaskBatchingWorker-target_localhost-18" []0x00007f0a5ca03000 JavaThread "TaskBatchingWorker-target_localhost-17", stack(0x00007f09f6267000,0x00007f09f6368000)    [_thread_blocked, stack(0x00007f09f6368000,0x00007f09f6469000)  ]   daemon, id=4151  daemon_thread_blocked, stack(0x00007f09f666b000,0x00007f09f676c000)
+  JavaThread "TaskBatchingWorker-target_localhost-12" [_thread_blocked, stack(0x00007f09f676c000,0x00007f09f686d000)] , stack(0x00007f09f686d000,0x00007f09f696e000)]
+0x00007f0a5c9f3000  daemon [] daemon [, id=4145]
+0x00007f0a5c9ef000 [_thread_blocked, stack(0x00007f09f6c71000,0x00007f09f6d72000)] daemon] JavaThread "TaskBatchingWorker-target_localhost-0"_thread_blocked
+  daemon_thread_blocked] , id=4112
+ daemon_thread_blocked]   daemon]
+_thread_blocked_thread_blocked_thread_in_vm
+JavaThread "Signal Dispatcher" [JavaThread "Finalizer" [
+ Other Threads:
+VMThread
+VM state:
+ total 99328K, used 24552K Begin Bits: [0x00007f0a44280000, 0x00007f0a46140000)
+CodeCache: size=245760Kb used=20140Kb max_used=20142Kb free=225619Kb
+
+Event: 1024.716 Thread 0x00007f0a5c0c4800 
+Thread 0x00007f0a5c0c4800 
+nmethod 7296 0x00007f0a4d564090 code [0x00007f0a4d564200, 0x00007f0a4d564490]GC heap after
+{Heap before GC invocations=12 (full 2):
+ PSYoungGen      total 153088K, used 140288K [0x00000000d7000000, 0x00000000e4000000, 0x0000000100000000)
+  eden space 140288K, 100% used [0x00000000d7000000,0x00000000df900000,0x00000000df900000)
+  from space 12800K, 0% used [0x00000000df900000,0x00000000df900000,0x00000000e0580000)
+  to   space 15360K, 0% used [0x00000000e3100000,0x00000000e3100000,0x00000000e4000000)
+ ParOldGen       total 99328K, used 24536K [0x0000000085000000, 0x000000008b100000, 0x00000000d7000000)
+  object space 99328K, 24% used [0x0000000085000000,0x00000000867f6390,0x000000008b100000)
+ Metaspace       used 39942K, capacity 40388K, committed 40704K, reserved 1085440K
+  class space    used 5130K, capacity 5249K, committed 5376K, reserved 1048576K
+Heap after GC invocations=12 (full 2):
+ PSYoungGen      total 193536K, used 7774K [0x00000000d7000000, 0x00000000e3d80000, 0x0000000100000000)
+  eden space 180736K, 0% used [0x00000000d7000000,0x00000000d7000000,0x00000000e2080000)
+  from space 12800K, 60% used [0x00000000e3100000,0x00000000e3897978,0x00000000e3d80000)
+  to   space 14848K, 0% used [0x00000000e2080000,0x00000000e2080000,0x00000000e2f00000)
+ ParOldGen       total 99328K, used 24544K [0x0000000085000000, 0x000000008b100000, 0x00000000d7000000)
+  object space 99328K, 24% used [0x0000000085000000,0x00000000867f8390,0x000000008b100000)
+ Metaspace       used 39942K, capacity 40388K, committed 40704K, reserved 1085440K
+  class space    used 5130K, capacity 5249K, committed 5376K, reserved 1048576K
+}
+GC heap before
+GC heap after
+Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f0a4d5caa10 method=java.util.concurrent.locks.AbstractQueuedSynchronizer.enq(Ljava/util/concurrent/locks/AbstractQueuedSynchronizer$Node;)Ljava/util/concurrent/locks/AbstractQueuedSynchronizerUncommon trap: reason=unstable_if action=reinterpret pc=0x00007f0a4deed730 method=java.util.concurrent.locks.ReentrantLock$Sync.nonfairTryAcquire(I)Z @ 34Thread 0x00007f0a5cc24000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f0a4deeda8c method=java.util.concurrent.locks.ReentrantLock$Sync.nonfairTryAcquire(I)Z @ 19Thread 0x00007f0a5d01e800 
+Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f0a4d3f0474 method=java.nio.charset.CharsetDecoder.reset()Ljava/nio/charset/CharsetDecoder; @ 1Thread 0x00007f0a5d026800 
+
+
+Thread 0x00007f0a5c9f7000 
+Exception <a 'java/net/SocketTimeoutException': Read timed out> (0x00000000d88dc628) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 735]Exception <a 'java/net/SocketTimeoutException': Read timed out> (0x00000000d88e3b68) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 735]
+Exception <a 'java/net/SocketTimeoutException': Read timed out> (0x00000000d88f26f8) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 735]
+flushing nmethod 0x00007f0a4d5e8c90Thread 0x00007f0a5c0c4800 

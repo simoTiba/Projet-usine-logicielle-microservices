@@ -1,0 +1,93 @@
+#
+#
+SIGBUS (0x7) at pc=0x00007f4c8ce5890e, tid=0x00007f4c71634700
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_144-b01) (build 1.8.0_144-b01)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.144-b01 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+#   [libjvm.so+0x96890e]
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+Current thread (0x00007f4c880ce800):  WatcherThread [stack: 0x00007f4c71534000,0x00007f4c71635000] [id=4306]
+
+siginfo: si_signo: 7 (SIGBUS), si_code: 2 (BUS_ADRERR), si_addr: 0x00007f4c8e0d7420
+
+Registers:
+, RBX=0x00007f4c8e0d7420, RCX=0x0000000000000000
+RSP=0x00007f4c71633c80, RBP=0x00007f4c71633c90, RSI=0x0000000000000005
+R8 =0x00007f4c8d4b5da0, R9 =0x0000000000000001, R10=0x0035a56786914a1d, R11=0x0000000000000001R12=0x0000000000000001, R14=0x00007f4c88010080, R15=0x0000000000000032
+, EFLAGS=0x0000000000010202, ERR=0x0000000000000007
+Top of Stack: (sp=0x00007f4c71633c80)
+00007f4c88010080 000000000000000800007f4c71633cc000007f4c8cee917d
+00007f4c71633cc00000000000000001
+000000000000000200000000000000320x00007f4c71633cc0:    00007f4c8cf3484d
+000000000000000000000000000000320x00007f4c71633ce0:   00007f4c880ce80000007f4c880cf610
+00007f4c880ce80000007f4c71634700
+00007f4c71633d8000007f4c8cf644270x00007f4c71633d10:   000000000000000000007f4c880ce800
+00007f4c880cf700
+0x00007f4c71633d30:    
+ 
+0x00007f4c71633d50:    00000000000000000x00007f4c71633d60:   00007f4c880cf610
+00007f4c880ce80000007f4c716347000x00007f4c71633d80:   00007f4c71633f50 00007f4c8ce1a338
+0000000000000000 0000000000000000
+000000000000000000000000000000000x00007f4c71633db0:   00000000000000000x00007f4c71633dc0:   000000000000000000000000000000000x00007f4c71633dd0:    00000000000000000x00007f4c71633de0:   0000000000000000 0x00007f4c71633df0:    
+000000000000000000000000000000000x00007f4c71633e10:    00000000000000000x00007f4c71633e20:   000000000000000000000000000000000x00007f4c71633e30:    
+0x00007f4c71633e40:    0000000000000000
+0000000000000000 
+0x00007f4c71633e60:    00000000000000000x00007f4c71633e70:   0000000000000000 
+Instructions: (pc=0x00007f4c8ce5890e)
+0x00007f4c8ce588ee:   90  48   e553    08  8b0x00007f4c8ce588fe:   7f38  ff 0c48    07  
+4889    08 c9c30f1f84 0000
+ 5531c048   89e5740e    
+RAX=0x0000000017b339b0 is an unknown value
+0x00007f4c8e0d7420 is an unknown value
+0x0000000000000032 is an unknown value
+0x00007f4c71633c80 is an unknown value
+0x0000000000000005 is an unknown value
+0x00007f4c8d4b5da0:  in /usr/java/jdk1.8.0_144/jre/lib/amd64/server/libjvm.so at 0x00007f4c8c4f0000R9 =0x0035a56786914a1d is an unknown value
+R11=0x0000000000000001 is an unknown value
+R13=R15=
+
+[0x00007f4c71534000,0x00007f4c71635000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+  [libjvm.so+0xa4484d]  [libjvm.so+0xa74427]
+  [libjvm.so+0x92a338]  java_start(Thread*)+0x108
+---------------  P R O C E S S  ---------------
+Java Threads: ( => current thread )
+   daemon0x00007f4bec01c000_thread_blocked]0x00007f4bec01b800JavaThread "HystrixTimer-4" [, stack(0x00007f4c05603000,0x00007f4c05704000)]  JavaThread "hystrix-IntegrationClient-3"_thread_blocked]0x00007f4bf4444000 daemon [, stack(0x00007f4c05805000,0x00007f4c05906000)   _thread_blocked, stack(0x00007f4c05906000,0x00007f4c05a07000)
+ daemon_thread_blocked0x00007f4c0000d800 daemon_thread_blocked]0x00007f4c0000b000  daemon_thread_blocked, id=4693]  0x00007f4c00009000 daemon
+JavaThread "hystrix-IntegrationClient-1" [_thread_blocked, stack(0x00007f4c05e0b000,0x00007f4c05f0c000)
+ daemon [ daemon [, stack(0x00007f4c0600d000,0x00007f4c0610e000)
+ [, id=46850x0000000000f90800]    [, id=4673  0x00007f4bec018000JavaThread "RibbonApacheHttpClientConfiguration.connectionManagerTimer"  0x00007f4c08001000 [_thread_blocked, stack(0x00007f4c06712000,0x00007f4c06813000)0x00007f4c14001800 [, id=4658]   _thread_blocked, stack(0x00007f4c06914000,0x00007f4c06a15000)]  0x00007f4bf450a000, id=4654, stack(0x00007f4c06a15000,0x00007f4c06b16000)
+0x00007f4bf44ff000 [, id=4653  , id=4652, stack(0x00007f4c06c17000,0x00007f4c06d18000)
+0x00007f4bf44ea800 [, stack(0x00007f4c06d18000,0x00007f4c06e19000)  , id=4289]  0x00007f4c8a005800JavaThread "http-nio-9999-AsyncTimeout" daemon daemon, id=4525
+0x00007f4c8a001800 [ , stack(0x00007f4c0711c000,0x00007f4c0721d000) [_thread_blocked
+ [, id=4521] JavaThread "http-nio-9999-exec-8" _thread_blocked]
+ []]JavaThread "http-nio-9999-exec-2" []    daemon0x00007f4c89fbb800JavaThread "Eureka-JerseyClient-Conn-Cleaner2"JavaThread "Eureka-JerseyClient-Conn-Cleaner2" [], stack(0x00007f4c3932a000,0x00007f4c3942b000)  
+  []   , id=4474  JavaThread "Service Thread" [0x00007f4c880c8800_thread_blocked   [, id=4302
+ ] [id=4298]WatcherThread [id=4306]VM Mutex/Monitor currently owned by a thread:  - owner thread: 0x00007f4c880ce800  from  to   Begin Bits: [0x00007f4c73cf6000, 0x00007f4c75bb6000)
+
+ compilation: enabled
+Thread 0x00007f4c880c8800 
+
+Thread 0x00007f4c880c8800 Event: 967.382 
+Thread 0x00007f4c880c8800 8401       4       java.util.AbstractQueue::<init> (5 bytes)nmethod 8401 0x00007f4c78908910 code [0x00007f4c78908a60, 0x00007f4c78908ab8]{Heap before GC invocations=14 (full 2):
+ PSYoungGen      total 320000K, used 319983K [0x00000000d7000000, 0x00000000f2700000, 0x0000000100000000)
+  eden space 306176K, 100% used [0x00000000d7000000,0x00000000e9b00000,0x00000000e9b00000)
+  from space 13824K, 99% used [0x00000000e9b00000,0x00000000ea87be90,0x00000000ea880000)
+  to   space 16384K, 0% used [0x00000000f1700000,0x00000000f1700000,0x00000000f2700000)
+ ParOldGen       total 76800K, used 20579K [0x0000000085000000, 0x0000000089b00000, 0x00000000d7000000)
+  object space 76800K, 26% used [0x0000000085000000,0x0000000086418e58,0x0000000089b00000)
+ Metaspace       used 53974K, capacity 54448K, committed 54824K, reserved 1097728K
+  class space    used 6955K, capacity 7087K, committed 7208K, reserved 1048576K
+Event: 37.652 
+
+
+
+
+Exception <a 'java/net/SocketTimeoutException': Read timed out> (0x00000000e1249c10) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 735]Event: 787.339 Exception <a 'java/net/SocketTimeoutException': Read timed out> (0x00000000e12c25e8) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 735]
+Events (10 events):
+flushing nmethod 0x00007f4c79842a50Event: 967.380 flushing nmethod 0x00007f4c799e8150Thread 0x00007f4c880c8800 
+Event: 967.380 

@@ -1,0 +1,12 @@
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/entities/Diplome.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/entities/Service.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/entities/proxy.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/swagger/SwaggerConfig.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/AProxyServiceApplication.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/clients/IntegrationClient.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/clients/serviceClient.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/clients/FeignExample.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/entities/Enseignant.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/restcontroller/ProxyGatewayRestService.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/clients/diplomeClient.java
+/home/simo/Videos/UsineLogi/a-proxy-service/src/main/java/org/opendevup/clients/enseignantClient.java
