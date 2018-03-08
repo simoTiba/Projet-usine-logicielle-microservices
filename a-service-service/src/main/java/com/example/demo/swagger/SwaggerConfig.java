@@ -20,7 +20,7 @@ public class SwaggerConfig {
 	
 	@Bean
 	public Docket ServiceApi() {
-		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.example.demo")).
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.example.demo.restcontroller")).
 				paths(PathSelectors.any()).build();
 				}
 		
