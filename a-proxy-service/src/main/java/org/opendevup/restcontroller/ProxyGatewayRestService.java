@@ -5,7 +5,6 @@ import org.opendevup.clients.IntegrationClient;
 import org.opendevup.entities.Diplome;
 import org.opendevup.entities.Enseignant;
 import org.opendevup.entities.Service;
-import org.opendevup.entities.proxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -56,62 +55,73 @@ public class ProxyGatewayRestService {
 	private IntegrationClient integrationClient;
 	
 	/***************** AFFICHAGE *****************/
+	@CrossOrigin
 	@GetMapping("/diplomes")
 	public Collection<Diplome> listDiplomes(){
 		ParameterizedTypeReference<Resources<Diplome>> responseType= new ParameterizedTypeReference<Resources<Diplome>>() { };
 		return restTemplate.exchange("http://diplome-service/diplomes", HttpMethod.GET, null,responseType).getBody().getContent();
 	}
 	
-	
+	@CrossOrigin
 	@GetMapping("/enseignants")
 	public Collection<Enseignant> listEnseignants(){
 		ParameterizedTypeReference<Resources<Enseignant>> responseType= new ParameterizedTypeReference<Resources<Enseignant>>() { };
 		return restTemplate.exchange("http://enseignant-service/enseignants", HttpMethod.GET, null,responseType).getBody().getContent();
 	}
 	
+	@CrossOrigin
 	@GetMapping("/services")
 	public Collection<Service> listServices(){
 		ParameterizedTypeReference<Resources<Service>> responseType= new ParameterizedTypeReference<Resources<Service>>() { };
 		return restTemplate.exchange("http://services-service/services", HttpMethod.GET, null,responseType).getBody().getContent();
 	}
 
+	@CrossOrigin
 	@GetMapping("/diplome-service/diplomeByidEnseignant/{idEnseignant}")
 	public void diplomeByidEnseignant(@PathVariable Long idEnseignant) { }
 	
+	@CrossOrigin
 	@GetMapping("/services-service/serviceByEnseignant/{idEnseignant}")
 	public void serviceByEnseignant(@PathVariable Long idEnseignant) { }
 
+	@CrossOrigin
 	@GetMapping("/services-service/serviceByDiplome/{idDiplome}")
 	public void serviceByDiplome(@PathVariable String idDiplome) { }
 	
+	@CrossOrigin
 	@GetMapping("diplomesProxy/{idDiplome}")
 	Collection<Diplome> getDiplomeByUeId(@PathVariable String idDiplome) { 
 	   return this.integrationClient.getDips(idDiplome);
 	}
 	
+	@CrossOrigin
 	@GetMapping("servicesProxy/{ueId}")
 	Collection<Service> getServicesByUeId(@PathVariable String ueId) { 
 	   return this.integrationClient.getService(ueId);
 	}
 	
+	@CrossOrigin
 	@GetMapping("enseignantProxy/{idEnseignant}")
 	Collection<Enseignant> getEnseignantByid(@PathVariable Long idEnseignant) { 
 	   return this.integrationClient.getEnseignants(idEnseignant);
 	}
 	
 	/**************** AJOUTER DIPLOME & SERVICE & ENSEIGNANT****************************/
+	@CrossOrigin
 	@PostMapping("/addDiplomeProxy")
 	public void addDiplome(@RequestBody Diplome dip) {
 		HttpEntity<Diplome> responseType = (HttpEntity<Diplome>) new HttpEntity<>(dip);
 		restTemplate.exchange("http://diplome-service/addDiplome", HttpMethod.POST, responseType, Diplome.class);
 	}
 	
+	@CrossOrigin
 	@PostMapping("/addServiceProxy")
 	public void addService(@RequestBody Service service) {
 		HttpEntity<Service> responseType = (HttpEntity<Service>) new HttpEntity<>(service);
 		restTemplate.exchange("http://services-service/addService", HttpMethod.POST, responseType, Service.class);
 	}
 
+	@CrossOrigin
 	@PostMapping("/addEnseignantProxy")
 	public void addEnseignant(@RequestBody Enseignant ens) {
 		HttpEntity<Enseignant> responseType = (HttpEntity<Enseignant>) new HttpEntity<>(ens);
@@ -119,16 +129,19 @@ public class ProxyGatewayRestService {
 	}
 	
 	/**************** SUPPRIMER DIPLOME & SERVICE & ENSEIGNANT ****************************/
+	@CrossOrigin
 	@DeleteMapping("/deleteDiplomesProxy/{idDiplome}")
 	public void deleteDiplome(@PathVariable String idDiplome) {
 		restTemplate.delete("http://diplome-service/deleteDiplomes/{idDiplome}",idDiplome);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/deleteServicesProxy/{ueId}")
 	public void deleteService(@PathVariable String ueId) {
 		restTemplate.delete("http://services-service/deleteServices/{ueId}",ueId);
 	}
 
+	@CrossOrigin
 	@DeleteMapping("/deleteEnseignantProxy/{idEnseignant}")
 	public void deleteEnseignant(@PathVariable Long idEnseignant) {
 		restTemplate.delete("http://enseignant-service/deleteEnseignants/{idEnseignant}",idEnseignant);
@@ -136,18 +149,21 @@ public class ProxyGatewayRestService {
 	
 	
 	/**************** PUT DIPLOME & SERVICE & ENSEIGNANT****************************/
+	@CrossOrigin
 	@PutMapping("/diplomesProxy/info")
 	public @ResponseBody String updateDiplome(@RequestBody Diplome diplome){
 	 restTemplate.put("http://diplome-servic/diplomes/info", diplome);
 	 return "ok";
 	}
 	
+	@CrossOrigin
 	@PutMapping("/servicesProxy/info")
 	public @ResponseBody String updateService(@RequestBody Service service){
 	 restTemplate.put("http://services-servic/services/info", service);
 	 return "ok";
 	}
 
+	@CrossOrigin
 	@PutMapping("/enseignantProxy/info")
 	public @ResponseBody String updateEnseignant(@RequestBody Enseignant ens){
 	 restTemplate.put("http://enseignant-servic/enseignants/info", ens);

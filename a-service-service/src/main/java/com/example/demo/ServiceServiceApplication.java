@@ -22,10 +22,14 @@ public class ServiceServiceApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx=(ApplicationContext) SpringApplication.run(ServiceServiceApplication.class, args);
 		ServiceRepository ServiceRepository = ctx.getBean(ServiceRepository.class);
-		Service serv1=new Service("Service11", "prov1", "etat1",(long) 1, "dip1");
-		Service serv2=new Service("Service12", "prov2", "etat2",(long) 2, "dip2");
+		Service serv1=new Service("s01", 50, 6,5, (long)1,"dip1");
+		Service serv2=new Service("s02", 50, 6,5, (long)2,"dip2");
+		Service serv3=new Service("s03", 120,17,5, (long)2,"dip2");
+
 		ServiceRepository.save(serv1);
 		ServiceRepository.save(serv2);
+		ServiceRepository.save(serv3);
+
 		ServiceRepository.findAll().forEach(x->System.out.println(x.getUeId()));		
 	}	
 }

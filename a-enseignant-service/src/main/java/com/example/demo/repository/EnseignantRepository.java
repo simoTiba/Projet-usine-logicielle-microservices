@@ -18,5 +18,5 @@ interface EnseignantRepository extends JpaRepository<Enseignant, Long>{
 	@Modifying
     @Transactional
     @Query("delete from Enseignant e where e.idEnseignant = ?1")
-    void deleteEnseignantsByidEnseignant(String idEnseignant);
+    void deleteEnseignantsByidEnseignant(Long idEnseignant);
 }

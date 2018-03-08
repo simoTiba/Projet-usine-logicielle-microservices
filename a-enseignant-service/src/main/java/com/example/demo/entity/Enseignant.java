@@ -1,15 +1,13 @@
 package com.example.demo.entity;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Enseignant{
 	@Id
-	@GeneratedValue
 	private Long idEnseignant;
 	private String nom, prenom;
-	private boolean permanent, contractuel, vacataire;
+	private String statut;
 	
 	//PourMapping
 	//private String idDiplome;
@@ -17,21 +15,31 @@ public class Enseignant{
 	public Enseignant() {
 
 	}
-	public Enseignant(Long id,String nom, String prenom) {
+	
+	
+	public Enseignant(Long idEnseignant, String nom, String prenom, String statut) {
 		super();
+		this.idEnseignant = idEnseignant;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.permanent = true;
-		this.contractuel = true;
-		this.vacataire = false;
-		this.idEnseignant=id;
+		this.statut = statut;
 	}
-	
-	public Long getidEnseignant() {
+
+
+	public Long getIdEnseignant() {
 		return idEnseignant;
 	}
-	public void setidEnseignant(Long idEnseignant) {
+
+	public void setIdEnseignant(Long idEnseignant) {
 		this.idEnseignant = idEnseignant;
+	}
+
+	public String getStatut() {
+		return statut;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 
 	public String getNom() {
@@ -48,33 +56,19 @@ public class Enseignant{
 	}
 
 
-	public boolean isPermanent() {
-		return permanent;
+	@Override
+	public String toString() {
+		return "Enseignant [idEnseignant=" + idEnseignant + ", nom=" + nom + ", prenom=" + prenom + ", statut=" + statut
+				+ "]";
 	}
-	public void setPermanent(boolean permanent) {
-		this.permanent = permanent;
-	}
-	public boolean isContractuel() {
-		return contractuel;
-	}
-	public void setContractuel(boolean contractuel) {
-		this.contractuel = contractuel;
-	}
-	public boolean isVacataire() {
-		return vacataire;
-	}
-	public void setVacataire(boolean vacataire) {
-		this.vacataire = vacataire;
-	}
+
+	
+	
 //	public String getIdDiplome() {
 //		return idDiplome;
 //	}
 //	public void setIdDiplome(String idDiplome) {
 //		this.idDiplome = idDiplome;
 //	}
-	@Override
-	public String toString() {
-		return "Enseignant [idEnseignant=" + idEnseignant + ", nom=" + nom + ", prenom=" + prenom + ", permanent="
-				+ permanent + ", contractuel=" + contractuel + ", vacataire=" + vacataire +  "]";
-	}	
+		
 }

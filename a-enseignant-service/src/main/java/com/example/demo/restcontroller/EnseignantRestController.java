@@ -43,7 +43,7 @@ class EnseignantRestController{
 	
 	/**************** SUPPRIMER ****************************/
 	@DeleteMapping("/deleteEnseignants/{idEnseignant}")
-	public void deleteEnseignant(@PathVariable String idEnseignant) {
+	public void deleteEnseignant(@PathVariable Long idEnseignant) {
 		enseignantRepository.deleteEnseignantsByidEnseignant(idEnseignant);
 	}
 	

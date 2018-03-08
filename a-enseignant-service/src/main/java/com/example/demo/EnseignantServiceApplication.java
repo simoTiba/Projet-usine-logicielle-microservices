@@ -16,11 +16,14 @@ public class EnseignantServiceApplication {
 		ApplicationContext ctx =  SpringApplication.run(EnseignantServiceApplication.class, args);
 		EnseignantRepository EnseignantRepository = ctx.getBean(EnseignantRepository.class);
 		
-		Enseignant m1 = new Enseignant((long) 1,"Stephane", "Lopes");
-		Enseignant m2 = new Enseignant((long) 2,"Kedad", "Zoubida");
-		
+		Enseignant m1 = new Enseignant((long) 1,"Stephane", "Lopes","Responsable");
+		Enseignant m2 = new Enseignant((long) 2,"Kedad", "Zoubida","Responsable");
+		Enseignant m3 = new Enseignant((long) 3,"Taher", "Yehya","Maitre de conférence");
+
 		EnseignantRepository.save(m1);
 		EnseignantRepository.save(m2);
+		EnseignantRepository.save(m3);
+
 		
 		EnseignantRepository.findAll().forEach(m->System.out.println(m.getPrenom()));
 

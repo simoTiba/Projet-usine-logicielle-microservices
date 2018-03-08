@@ -6,9 +6,7 @@ import javax.persistence.Id;
 public class Service {
 	@Id
 	private String ueId;
-	private boolean realise; 
-	private String previsionel;
-	private String etat;
+	private int realise,previsionel,bilan; 
 	
 	//Pour Mapping Enseignnt
 	private Long idEnseignant;
@@ -17,15 +15,18 @@ public class Service {
 	private String idDiplome;
 	
 
-	public Service(String id, String previsionel, String etat, Long idEnseignant, String idDiplome) {
+
+	
+	public Service(String ueId, int realise, int previsionel, int bilan, Long idEnseignant, String idDiplome) {
 		super();
+		this.ueId = ueId;
+		this.realise = realise;
 		this.previsionel = previsionel;
-		this.etat = etat;
+		this.bilan = bilan;
 		this.idEnseignant = idEnseignant;
-		this.ueId=id;
 		this.idDiplome = idDiplome;
 	}
-	
+
 	public String getUeId() {
 		return ueId;
 	}
@@ -38,32 +39,32 @@ public class Service {
 		super();
 	}
 
-	public boolean isRealise() {
+	
+	public int getRealise() {
 		return realise;
 	}
-	public void setRealise(boolean realise) {
+
+	public void setRealise(int realise) {
 		this.realise = realise;
 	}
-	public String getPrevisionel() {
+
+	public int getPrevisionel() {
 		return previsionel;
 	}
-	public void setPrevisionel(String previsionel) {
+
+	public void setPrevisionel(int previsionel) {
 		this.previsionel = previsionel;
 	}
-	public String getEtat() {
-		return etat;
+
+	public int getBilan() {
+		return bilan;
 	}
-	public void setEtat(String etat) {
-		this.etat = etat;
+
+	public void setBilan(int bilan) {
+		this.bilan = bilan;
 	}
-	@Override
-	public String toString() {
-		return "Service [ueId=" + ueId +", enseignatId=" + idEnseignant + ", realise=" + realise
-				+ ", previsionel=" + previsionel + ", etat=" + etat + "]";
-	}
+
 	//Pour Mapping
-
-
 	public String getIdDiplome() {
 		return idDiplome;
 	}
@@ -79,8 +80,5 @@ public class Service {
 	public void setIdDiplome(String idDiplome) {
 		this.idDiplome = idDiplome;
 	}
-	
-	
-
-	
+		
 }

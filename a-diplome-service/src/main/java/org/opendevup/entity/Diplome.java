@@ -7,9 +7,10 @@ import javax.persistence.Id;
 public class Diplome{
 	@Id
 	private String idDiplome;
-	private String semestre;
-	private String volumehoraire;
-	private String codeUe;
+	private String semestre, label, departement  ;
+	private boolean verrou;
+	private int volumehoraire, cm, td, tp;
+	
 	
 	//Pour Mapping avec Service
 	private String ueId;
@@ -21,17 +22,21 @@ public class Diplome{
 		
 	}
 	
-	public Diplome(String id, String semestre, String volumehoraire, String codeUe, String ueId, Long idEnseignant) {
-		this.semestre=semestre;
-		this.volumehoraire=volumehoraire;
-		this.codeUe = codeUe;
+	public Diplome(String idDiplome, String semestre, String label, boolean verrou, int volumehoraire, int cm, int td,
+			int tp, String departement, String ueId, Long idEnseignant) {
+		super();
+		this.idDiplome = idDiplome;
+		this.semestre = semestre;
+		this.label = label;
+		this.verrou = verrou;
+		this.volumehoraire = volumehoraire;
+		this.cm = cm;
+		this.td = td;
+		this.tp = tp;
+		this.departement=departement;
 		this.ueId = ueId;
-		this.idDiplome=id;
 		this.idEnseignant = idEnseignant;
 	}
-	
-	
-
 	public String getIdDiplome() {
 		return idDiplome;
 	}
@@ -50,24 +55,76 @@ public class Diplome{
 	public void setSemestre(String semestre) {
 		this.semestre = semestre;
 	}
-	public String getVolumehoraire() {
+
+	public String getLabel() {
+		return label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
+	public boolean isVerrou() {
+		return verrou;
+	}
+
+	public void setVerrou(boolean verrou) {
+		this.verrou = verrou;
+	}
+
+	public int getVolumehoraire() {
 		return volumehoraire;
 	}
-	public void setVolumehoraire(String volumehoraire) {
+
+	public void setVolumehoraire(int volumehoraire) {
 		this.volumehoraire = volumehoraire;
 	}
-	public String getCodeUe() {
-		return codeUe;
+
+	public int getCm() {
+		return cm;
 	}
-	public void setCodeUe(String codeUe) {
-		this.codeUe = codeUe;
+
+	public void setCm(int cm) {
+		this.cm = cm;
 	}
-	@Override
-	public String toString() {
-		return "Diplome [idDiplome=" + idDiplome + ", semestre=" + semestre + ", volumehoraire=" + volumehoraire
-				+ ", codeUe=" + codeUe + ", ueId=" + ueId + "]";
+
+	public int getTd() {
+		return td;
+	}
+
+	public void setTd(int td) {
+		this.td = td;
+	}
+
+	public int getTp() {
+		return tp;
+	}
+
+	public void setTp(int tp) {
+		this.tp = tp;
 	}
 	
+	
+	
+	public String getDepartement() {
+		return departement;
+	}
+
+	public void setDepartement(String departement) {
+		this.departement = departement;
+	}
+
+	@Override
+	public String toString() {
+		return "Diplome [idDiplome=" + idDiplome + ", semestre=" + semestre + ", label=" + label + ", verrou=" + verrou
+				+ ", volumehoraire=" + volumehoraire + ", cm=" + cm + ", td=" + td + ", tp=" + tp + ", ueId=" + ueId
+				+ ", idEnseignant=" + idEnseignant + "]";
+	}
+
+
+
+
+
 	//Mapping
 	public Long getIdEnseignant() {
 		return idEnseignant;
