@@ -2,8 +2,8 @@
 
 ![usinelogiciel](https://user-images.githubusercontent.com/32774607/37176841-d62d3c40-231d-11e8-856a-e5c6484407dd.png)
 
-1) On a créé un scipt mvn.sh qui lance compile tout les services: ./mvn.sh
-2) Ensuite on lance les services par la commande docker-compose up :
+1) On a créé un scipt mvn.sh qui compile tout les services: *./mvn.sh*
+2) Ensuite on lance les services par la commande *docker-compose up* :
 
 La liste des URL des services:
 
