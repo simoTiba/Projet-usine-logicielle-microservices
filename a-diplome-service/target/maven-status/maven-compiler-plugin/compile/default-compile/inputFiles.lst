@@ -1,6 +1,6 @@
-/home/simo/Videos/UsineLogi/a-diplome-service/src/main/java/org/opendevup/restcontroller/DiplomeRestController.java
-/home/simo/Videos/UsineLogi/a-diplome-service/src/main/java/org/opendevup/repository/DiplomeRepository.java
-/home/simo/Videos/UsineLogi/a-diplome-service/src/main/java/org/opendevup/swagger/SwaggerConfig.java
-/home/simo/Videos/UsineLogi/a-diplome-service/src/main/java/org/opendevup/DiplomeServiceApplication.java
-/home/simo/Videos/UsineLogi/a-diplome-service/src/main/java/org/opendevup/entity/Diplome.java
-/home/simo/Videos/UsineLogi/a-diplome-service/src/main/java/org/opendevup/repository/DiplomeConfigJson.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-diplome-service/src/main/java/org/opendevup/swagger/SwaggerConfig.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-diplome-service/src/main/java/org/opendevup/repository/DiplomeRepository.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-diplome-service/src/main/java/org/opendevup/entity/Diplome.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-diplome-service/src/main/java/org/opendevup/restcontroller/DiplomeRestController.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-diplome-service/src/main/java/org/opendevup/DiplomeServiceApplication.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-diplome-service/src/main/java/org/opendevup/repository/DiplomeConfigJson.java

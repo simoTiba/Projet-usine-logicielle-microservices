@@ -1,6 +1,6 @@
-/home/simo/Videos/UsineLogi/a-enseignant-service/src/main/java/com/example/demo/repository/EnseignantRepository.java
-/home/simo/Videos/UsineLogi/a-enseignant-service/src/main/java/com/example/demo/EnseignantServiceApplication.java
-/home/simo/Videos/UsineLogi/a-enseignant-service/src/main/java/com/example/demo/swagger/SwaggerConfig.java
-/home/simo/Videos/UsineLogi/a-enseignant-service/src/main/java/com/example/demo/entity/Enseignant.java
-/home/simo/Videos/UsineLogi/a-enseignant-service/src/main/java/com/example/demo/repository/EnseignantConfigJson.java
-/home/simo/Videos/UsineLogi/a-enseignant-service/src/main/java/com/example/demo/restcontroller/EnseignantRestController.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-enseignant-service/src/main/java/com/example/demo/repository/EnseignantConfigJson.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-enseignant-service/src/main/java/com/example/demo/entity/Enseignant.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-enseignant-service/src/main/java/com/example/demo/repository/EnseignantRepository.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-enseignant-service/src/main/java/com/example/demo/swagger/SwaggerConfig.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-enseignant-service/src/main/java/com/example/demo/restcontroller/EnseignantRestController.java
+/home/simo/Videos/UsineLogi/Projet-usine-logicielle-microservices/a-enseignant-service/src/main/java/com/example/demo/EnseignantServiceApplication.java
