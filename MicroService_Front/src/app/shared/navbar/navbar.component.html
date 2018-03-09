@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" (click)="sidebarToggle()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar bar1"></span>
+                <span class="icon-bar bar2"></span>
+                <span class="icon-bar bar3"></span>
+            </button>
+            <a class="navbar-brand" href="#" >{{getTitle()}}</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li role="presentation" class="dropdown">
+					<a
+						class="dropdown-toggle" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="true" aria-expanded="false">
+                        IDOUHAMMOU.A
+					</a>
+						<ul class="dropdown-menu" id="dropdown-menu">
+					
+							<li> <a href="profil"><i id="icons" class="ti-user"></i> Profil</a></li>
+							<li> <a href="#"><i id="icons" class="ti-lock"></i> Déconnexion</a></li>
+							
+						</ul>
+						</li>
+            </ul>
+
+        </div>
+    </div>
+</nav>

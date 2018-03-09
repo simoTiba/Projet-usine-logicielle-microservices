@@ -1,0 +1,140 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="header">
+                  <div class="row">
+                    <div class="col-md-1">
+                       
+
+                        <button class="btn btn-info btn-xs btn-fill dropdown-toggle" type="button" 
+                        data-toggle="modal" data-target="#exampleModal"> <i class="ti-plus"></i></button>
+                    </div>        
+                    <div class="col-md-7" style="margin-left: -38px;">
+                                <p>
+                                  <b>
+                                     <i class="ti-medall-alt"></i> Les diplômes
+                                </b>
+                                </p>
+                                </div>
+                          
+                       
+                            
+                  </div>
+              </div>
+              <div class="content table-responsive table-full-width">
+                  <table class="table" id="mytable">
+                      <thead>
+                          <tr>                              
+                              <th>#Id</th>
+                              <th>Titre UE</th>
+                              <th>Maquette</th>
+                              <th>Département</th>
+                              <th>Responsable</th>
+                              <th>Volume horaire</th>
+                              <th>Verrou</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let row of allDiplome">
+                              <td>{{row.idDiplome}}</td>
+                              <td>{{row.codeUe}}</td>
+                              <td>{{row.semestre}}</td>
+                              <td>Informatique</td>
+                              <td>{{row.idEnseignant}}</td>
+                              <td>{{row.volumehoraire}}</td>
+                              <td *ngIf="row.verrou==true"><span class="label label-success">ON</span></td>
+                              <td *ngIf="row.verrou==false"><span class="label label-warning">OFF</span></td>
+                              
+                          </tr>
+                      </tbody>
+                  </table>
+
+              </div>
+            <div class="footer">
+        <nav   aria-label="Page navigation example">
+                <button class="btn btn-primary btn-fill btn-m"  >Precedent</button>
+                <button  class="btn btn-primary btn-fill btn-m text-right" >Suivant</button>
+
+
+        </nav>
+    </div>
+          </div>
+      </div>
+
+
+   <!--  <div class="col-md-4">
+          <div class="card">
+             
+              <div class="card-block">
+                <h4 class="card-title">Ajouter un diplome</h4>
+                <div class="card-text">
+                    <form >
+                        <div class="form-group">
+                          <label for="formGroupExampleInput">Titre</label>
+                          <input type="text" class="form-control" id="formAdd" placeholder="LMD">
+                        </div>
+                        <div class="form-group">
+                          <label for="formGroupExampleInput2">Responsable</label>
+                          <input type="text" class="form-control" id="formAdd"  placeholder="Arthur Dupont">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Spécialité</label>
+                            <input type="text" class="form-control" id="formAdd"  placeholder="Informatique">
+                          </div>
+                          <div class="form-group">
+                              <button class="btn btn-primary btn-fill btn-m text-right">Valider</button>
+                            </div>
+                      </form>
+                    </div>
+              </div>
+            </div>
+</div> !-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+                      <form #diplomeForm="ngForm" (ngSubmit)="onAddDiplome(diplomeForm)">
+                          <div class="form-group">
+                            <label for="formGroupExampleInput">Code UE</label>
+                            <input ngModel required type="text" class="form-control" name="codeue" id="formAdd" placeholder="LMD">
+                          </div>
+                          <div class="form-group">
+                            <label for="formGroupExampleInput2">Titre</label>
+                            <input ngModel required  type="text" class="form-control" id="formAdd" name="titre" placeholder="Arthur Dupont">
+                          </div>
+                          <div class="form-group">
+                              <label for="formGroupExampleInput2">Maquette</label>
+                              <input ngModel required type="text" class="form-control" id="formAdd" name="maquette" placeholder="Informatique">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Département</label>
+                                <input ngModel required type="text" class="form-control" id="formAdd"  name="dept" placeholder="Informatique">
+                              </div>
+                              <div class="form-group">
+                                <label for="formGroupExampleInput2">Responsable</label>
+                                <input ngModel required type="number" class="form-control" id="formAdd" name="respo" placeholder="Informatique">
+                              </div>
+                              <div class="form-group">
+                                <label for="formGroupExampleInput2">Volume horaire</label>
+                                <input ngModel required type="text" class="form-control" id="formAdd"  name="vhoraire" placeholder="Informatique">
+                              </div>
+                              <div class="form-group">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                              </div>
+                        </form>
+                    
+        </div>
+       
+      </div>
+    </div>
+  </div>
