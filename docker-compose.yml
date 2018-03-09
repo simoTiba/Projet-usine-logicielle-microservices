@@ -64,3 +64,13 @@ services:
             - enseignant
         hostname: localhost
         container_name: proxy
+    
+    front:
+        build: ./MicroService_Front
+        image: front
+        ports:
+            - 4200:80
+        depends_on: 
+            - proxy
+        hostname: localhost
+        container_name: front
